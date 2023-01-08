@@ -9,7 +9,7 @@ fi
 # Changing to Debian sid
 
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
-cp /Linux/Debian/sources.list /etc/apt/sources.list
+cp sources.list /etc/apt/sources.list
 
 # Updating Packages
 apt update
