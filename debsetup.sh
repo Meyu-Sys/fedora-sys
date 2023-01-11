@@ -46,22 +46,7 @@ nala install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2
 
 # Installing Packages
 
-nala install sddm dolphin wget unzip zip 
-
-# Installing fonts 
-
-nala install fonts-font-awesome
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
-unzip FiraCode.zip -d /home/$username/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-unzip Meslo.zip -d /home/$username/.fonts
-mv dotfonts/fontawesome/otfs/*.otf /home/$username/.fonts/
-chown $username:$username /home/$username/.fonts/*
-
-# Reloading Font
-fc-cache -vf
-# Removing zip Files
-rm ./FiraCode.zip ./Meslo.zip
+nala install sddm wget unzip zip htop nano neofetch python3
 
 # Install brave-browser
 sudo nala install apt-transport-https curl -y
