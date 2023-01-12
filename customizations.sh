@@ -29,8 +29,6 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
 unzip Meslo.zip -d ~/.fonts
 mv dotfonts/fontawesome/otfs/*.otf ~/.fonts/
 chown $username:$username ~/.fonts/*
-# Reloading Font
-fc-cache -vf
 # Removing zip Files
 rm ./FiraCode.zip ./Meslo.zip
 
@@ -53,7 +51,5 @@ mkdir -pv ~/.urxvt/ext
 (cd ~/.urxvt/ext/; curl -LO https://raw.githubusercontent.com/simmel/urxvt-resize-font/master/resize-font)
 (cd ~/.urxvt/ext/; curl -LO https://raw.githubusercontent.com/mina86/urxvt-tabbedex/master/tabbedex)
 
-# Sync
-cd ~/Documents/
-git clone --depth 1 --recurse-submodules https://github.com/owl4ce/dotfiles.git
-rsync -avxHAXP --exclude-from=- dotfiles/. ~/ << "EXCLUDE".git*LICENSE*.mdEXTRA_JOYFULEXCLUDE
+# FOnt cache
+fc-cache -vf
