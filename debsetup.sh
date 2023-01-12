@@ -16,6 +16,7 @@ builddir=$(pwd)
 # Updating Packages
 apt update
 apt upgrade
+apt install curl gpg
 
 # Installing Nala
 echo "deb [arch=amd64,arm64,armhf] http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
