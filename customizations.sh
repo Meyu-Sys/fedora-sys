@@ -1,16 +1,14 @@
 username=$(id -u -n 1000)
 
 # Customizations
-nala install xserver-xorg-core x11-xserver-utils psmisc
-nala install dunst nitrogen openbox rofi rxvt-unicode tint2 picom libgtk3-perl 
-nala install pulseaudio mpd mpc ncmpcpp
-nala install alsa-utils brightnessctl imagemagick scrot w3m-img wireless-tools xclip xsettingsd xss-lock
-nala install thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler
+dnf install xserver-xorg-core x11-xserver-utils psmisc
+dnf install dunst nitrogen openbox rofi rxvt-unicode tint2 picom libgtk3-perl 
+dnf install pulseaudio mpd mpc ncmpcpp
+dnf install alsa-utils brightnessctl imagemagick scrot w3m-img wireless-tools xclip xsettingsd xss-lock
+dnf install thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler
 #obmenu-generator
-echo 'deb http://download.opensuse.org/repositories/home:/Head_on_a_Stick:/obmenu-generator/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/home:Head_on_a_Stick:obmenu-generator.list
-curl -fsSL https://download.opensuse.org/repositories/home:Head_on_a_Stick:obmenu-generator/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_Head_on_a_Stick_obmenu-generator.gpg > /dev/null
-nala update
-nala install obmenu-generator
+dnf copr enable dturner/TOS
+dnf install obmenu-generator
 
 # Fonts
 mkdir -pv ~/.fonts/{Cantarell,Comfortaa,IcoMoon-Custom,Nerd-Patched,Unifont}
@@ -22,7 +20,7 @@ wget --no-hsts -cNP ~/.fonts/IcoMoon-Custom/ https://github.com/owl4ce/dotfiles/
 wget --no-hsts -cNP ~/.fonts/Comfortaa/ https://raw.githubusercontent.com/googlefonts/comfortaa/main/fonts/OTF/Comfortaa-{Bold,Regular}.otf
 tar -xvf cantarell*.tar.xz --strip-components 2 --wildcards -C ~/.fonts/Cantarell/ \*/\*/Cantarell-VF.otf
 
-nala install fonts-font-awesome fonts-noto
+dnf install fonts-font-awesome fonts-noto
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 unzip FiraCode.zip -d ~/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
