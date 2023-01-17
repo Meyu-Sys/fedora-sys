@@ -33,7 +33,11 @@ mv /home/$username/.config/sddm.conf /etc/sddm.conf
 dnf install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 
 # Installing Packages
-dnf install fish sddm wget unzip zip htop nano neofetch python3
+dnf copr enable atim/alacritty
+dnf install fish sddm wget unzip zip htop nano neofetch python3 alacritty nvim lsd zoxide
+
+# Starship
+curl -sS https://starship.rs/install.sh | sh
 
 # customizations
 ./customizations.sh
