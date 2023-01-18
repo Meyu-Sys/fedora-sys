@@ -1,11 +1,12 @@
 username=$(id -u -n 1000)
 
 # Customizations
-dnf install xserver-xorg-core x11-xserver-utils psmisc
-dnf install dunst nitrogen openbox rofi rxvt-unicode tint2 picom libgtk3-perl 
+dnf install @base-x xorg-x11-server-utils psmisc
+dnf install dunst nitrogen openbox rofi rxvt-unicode tint2 picom perl-Gtk3 
+rpm -ivh http://rpm.livna.org/livna-release.rpm
 dnf install pulseaudio mpd mpc ncmpcpp
-dnf install alsa-utils brightnessctl imagemagick scrot w3m-img wireless-tools xclip xsettingsd xss-lock
-dnf install thunar thunar-archive-plugin thunar-volman ffmpegthumbnailer tumbler
+dnf install alsa-utils brightnessctl scrot w3m-img xclip xsettingsd xss-lock
+dnf install thunar thunar-archive-plugin thunar-volman tumbler
 #obmenu-generator
 dnf copr enable dturner/TOS
 dnf install obmenu-generator
