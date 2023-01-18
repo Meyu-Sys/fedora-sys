@@ -39,7 +39,7 @@ tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
 mv /home/$username/.config/sddm.conf /etc/sddm.conf
 
 # Installing sugar-candy dependencies
-dnf install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
+dnf install qt5-qtgraphicaleffects qt5-qtquickcontrols2 qt5-qtsvg
 
 # Installing Packages
 dnf copr enable atim/alacritty
