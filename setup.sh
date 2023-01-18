@@ -6,9 +6,18 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# Creating variables
+echo Enter username:
+read username
 
-username=$(id -u -n 1000)
+echo Please enter your password:
+read passwd
+
 builddir=$(pwd)
+
+#Creating users
+dnf install openssl
+useradd -m -g wheel -p `openssl passwd -1 $passwd` $username
 
 # Updating Packages
 dnf upgrade
