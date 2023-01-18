@@ -1,6 +1,7 @@
 username=$(id -u -n 1000)
 
 # Customizations
+dnf install openbox
 dnf install @base-x xorg-x11-server-utils psmisc
 dnf install dunst nitrogen openbox rofi rxvt-unicode tint2 picom perl-Gtk3 
 rpm -ivh http://rpm.livna.org/livna-release.rpm
@@ -21,7 +22,9 @@ wget --no-hsts -cNP /home/$username/.fonts/IcoMoon-Custom/ https://github.com/ow
 wget --no-hsts -cNP /home/$username/.fonts/Comfortaa/ https://raw.githubusercontent.com/googlefonts/comfortaa/main/fonts/OTF/Comfortaa-{Bold,Regular}.otf
 tar -xvf cantarell*.tar.xz --strip-components 2 --wildcards -C /home/$username/.fonts/Cantarell/ \*/\*/Cantarell-VF.otf
 
-dnf install fonts-font-awesome fonts-noto
+dnf install fontawesome-fonts
+dnf copr enable tagoh/google-noto-fonts-default
+dnf install google-noto-fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 unzip FiraCode.zip -d /home/$username/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip

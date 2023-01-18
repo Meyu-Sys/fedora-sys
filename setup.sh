@@ -39,11 +39,11 @@ tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
 mv /home/$username/.config/sddm.conf /etc/sddm.conf
 
 # Installing sugar-candy dependencies
-dnf install qt5-qtgraphicaleffects qt5-qtquickcontrols2 qt5-qtsvg
+dnf install qt5-qtgraphicaleffects qt5-qtquickcontrols2 qt5-qtsvg sddm
 
 # Installing Packages
 dnf copr enable atim/alacritty
-dnf install fish sddm wget unzip zip htop nano neofetch python3 alacritty nvim lsd zoxide
+dnf install openbox fish sddm wget unzip zip htop nano neofetch python3 alacritty nvim lsd zoxide
 
 # Starship
 curl -sS https://starship.rs/install.sh | sh
