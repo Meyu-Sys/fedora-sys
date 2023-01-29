@@ -1,7 +1,6 @@
 # apps... but better
 alias vim=nvim
 alias ls=lsd
-alias cd=z
 
 # ls
 alias l='ls -l'
